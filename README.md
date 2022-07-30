@@ -1,6 +1,6 @@
 # alphabot
 
-A Discord bot to monitor liquidation status of wallets for Acala.
+A Discord bot to monitor liquidation status of wallets for Acala and Karura.
 
 ## Overview
 
