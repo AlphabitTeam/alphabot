@@ -61,7 +61,7 @@ client.once('ready', async () => {
 const prefix = '/alphabit ';
 
 client.on('messageCreate', async (message) => {
-  if (message.author.bot) {
+  if (message.author.bot || !message.content.startsWith(prefix)) {
     return;
   }
 
