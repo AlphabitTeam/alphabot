@@ -4,7 +4,7 @@ import { SubscriptionService } from '../services';
 
 export const command: Command = {
   name: 'query',
-  description: 'query positions',
+  description: 'Query positions',
   async execute(
     message: Message,
     subscriptionService: SubscriptionService,
@@ -17,13 +17,13 @@ export const command: Command = {
       args.length === 0 ? undefined : args
     );
     if (positions.length === 0) {
-      message.author.send('No subscriptions found').catch((error) => {
+      message.author.send('No subscriptions found.').catch((error) => {
         console.error(
           `Could not send help DM to ${message.author.tag}.\n`,
           error
         );
         message.reply(
-          'it seems like I can\'t DM you! Do you have DMs disabled?'
+          'It seems like I can\'t DM you! Do you have DMs disabled?'
         );
       });
     }
@@ -52,7 +52,7 @@ export const command: Command = {
             error
           );
           message.reply(
-            'it seems like I can\'t DM you! Do you have DMs disabled?'
+            'It seems like I can\'t DM you! Do you have DMs disabled?'
           );
         });
     }
@@ -73,20 +73,20 @@ export const command: Command = {
             error
           );
           message.reply(
-            'it seems like I can\'t DM you! Do you have DMs disabled?'
+            'It seems like I can\'t DM you! Do you have DMs disabled?'
           );
         });
     }
  else {
       await message.author
-        .send('All your subscribed positions are safe from liquidation')
+        .send('All your subscribed positions are safe from liquidation.')
         .catch((error) => {
           console.error(
             `Could not send help DM to ${message.author.tag}.\n`,
             error
           );
           message.reply(
-            'it seems like I can\'t DM you! Do you have DMs disabled?'
+            'It seems like I can\'t DM you! Do you have DMs disabled?'
           );
         });
     }

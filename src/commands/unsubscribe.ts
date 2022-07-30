@@ -4,7 +4,7 @@ import { Command, NetworkType } from '../types';
 
 export const command: Command = {
   name: 'unsubscribe',
-  description: 'unsubscribe from notifications',
+  description: 'Unsubscribe from notifications',
   async execute(
     message: Message,
     subscriptionService: SubscriptionService,
@@ -23,12 +23,12 @@ export const command: Command = {
         );
       });
     }
-    await message.author.send('Unsubscribed successfully').catch((error) => {
+    await message.author.send('Unsubscribed successfully.').catch((error) => {
       console.error(
         `Could not send help DM to ${message.author.tag}.\n`,
         error
       );
-      message.reply('it seems like I can\'t DM you! Do you have DMs disabled?');
+      message.reply('It seems like I can\'t DM you! Do you have DMs disabled?');
     });
   },
 };

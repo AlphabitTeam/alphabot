@@ -79,7 +79,7 @@ client.on('messageCreate', async (message) => {
   if (network !== NetworkType.Acala && network !== NetworkType.Karura) {
     message.channel
       .send(
-        `You need to specify a network. Start your command with "/alphabit ${NetworkType.Acala}" or "/alphabit ${NetworkType.Karura}"`
+        `You need to specify a network. Start your command with "/alphabit ${NetworkType.Acala}" or "/alphabit ${NetworkType.Karura}".`
       )
       .catch((error) => {
         console.error(
@@ -87,7 +87,7 @@ client.on('messageCreate', async (message) => {
           error
         );
         message.reply(
-          'it seems like I can\'t DM you! Do you have DMs disabled?'
+          'It seems like I can\'t DM you! Do you have DMs disabled?'
         );
       });
     return;
@@ -104,7 +104,7 @@ client.on('messageCreate', async (message) => {
         `Could not send help DM to ${message.author.tag}.\n`,
         error
       );
-      message.reply('it seems like I can\'t DM you! Do you have DMs disabled?');
+      message.reply('It seems like I can\'t DM you! Do you have DMs disabled?');
     });
   }
 });

@@ -4,7 +4,7 @@ import { SubscriptionService } from '../services';
 
 export const command: Command = {
   name: 'subscribe',
-  description: 'subscribe to a wallet',
+  description: 'Subscribe to notifications',
   async execute(
     message: Message,
     subscriptionService: SubscriptionService,
@@ -13,14 +13,14 @@ export const command: Command = {
   ) {
     if (args.length < 1) {
       message.channel
-        .send('You need to specify a wallet address')
+        .send('You need to specify a wallet address.')
         .catch((error) => {
           console.error(
             `Could not send help DM to ${message.author.tag}.\n`,
             error
           );
           message.reply(
-            'it seems like I can\'t DM you! Do you have DMs disabled?'
+            'It seems like I can\'t DM you! Do you have DMs disabled?'
           );
         });
       return;
@@ -40,7 +40,7 @@ export const command: Command = {
           error
         );
         message.reply(
-          'it seems like I can\'t DM you! Do you have DMs disabled?'
+          'It seems like I can\'t DM you! Do you have DMs disabled?'
         );
       });
   },
