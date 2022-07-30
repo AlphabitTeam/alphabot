@@ -3,6 +3,7 @@ version: '3'
 services:
   alphabot:
     container_name: alphabot
+    restart: unless-stopped
     build:
       context: ./
       dockerfile: Dockerfile
@@ -18,6 +19,7 @@ services:
 
   postgresql-db:
     container_name: postgresql-db
+    restart: unless-stopped
     image: postgres:latest
     environment:
       POSTGRES_USER: ${POSTGRES_USER}
