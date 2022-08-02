@@ -11,21 +11,22 @@ services:
       DATABASE_URI: ${DATABASE_URI}
       TOKEN: ${TOKEN}
     ports:
-      - 8080:8080
+      - ${APP_PORT}:${APP_PORT}
     depends_on:
-      - postgresql-db
+      - alphabot-db
     networks:
       - alphabot
 
-  postgresql-db:
-    container_name: postgresql-db
+  alphabot-db:
+    container_name: alphabot-db
     restart: unless-stopped
     image: postgres:latest
     environment:
       POSTGRES_USER: ${POSTGRES_USER}
       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      PGPORT: ${POSTGRES_PORT}
     ports:
-      - 5432:5432
+      - ${POSTGRES_PORT}:${POSTGRES_PORT}
     volumes:
       - postgres_data:/var/lib/postgresql/data/
     networks:
