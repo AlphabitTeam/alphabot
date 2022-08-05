@@ -1,6 +1,6 @@
 {
   "name": "alphabot",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "A Discord bot to monitor liquidation status of wallets for Acala.",
   "author": "Alphabit",
   "main": "dist/index.js",
